@@ -24,10 +24,6 @@ export class CursoController {
   findOne(@Param("id") id: number){
     return this.cursoService.findOne(id)
   }
-  @Get("/busca/:id")
-  listarAlunosCurso(@Param("id") id: number){
-    return this.cursoService.listarAlunosDoCurso
-  }
 
   @Patch("/:id")
   update(@Param("id") id: number, @Body() dto: UpdateCursoDto){

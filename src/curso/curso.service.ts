@@ -36,9 +36,13 @@ export class CursoService {
   async listarAlunosDoCurso(id: number){
     return this.prisma.curso.findUnique({
       where: {id},
+      include:{
+        matriculas: {
       include: {
-        matriculas: true
+        user: true
       }
+    }
+  }
     })
   }
   async findOne(id : number){
